@@ -97,6 +97,7 @@ describe FiguresController do
 
   it "allows you to see a single Figure" do
     @figure = Figure.first
+    
     get "/figures/#{@figure.id}"
     expect(last_response.status).to eq(200)
     expect(last_response.body).to include("#{@figure.name}")
